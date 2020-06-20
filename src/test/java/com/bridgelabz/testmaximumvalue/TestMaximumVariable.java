@@ -63,4 +63,11 @@ public class TestMaximumVariable
         String maximum = maximumVariable.maximumStringValue("Peach", "Apple", "Banana");
         Assert.assertEquals("Peach", maximum);
     }
+
+    @Test
+    public void givenMaximumStringValueAt_SecondPosition_ReturnsSameValue()
+    {
+        String maximum = maximumVariable.maximumStringValue("Apple", "Peach", "Banana");
+        Assert.assertEquals("Peach", maximum);
+    }
 }
