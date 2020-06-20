@@ -18,63 +18,63 @@ public class TestMaximumVariable
     @Test
     public void givenMaximumIntegerValueAt_FirstPosition_ReturnsSameNumber()
     {
-        Integer maximum = maximumVariable.maximumIntegerValue(88, 44, 67);
+        Integer maximum = maximumVariable.maximumValue(88, 44, 67);
         Assert.assertEquals((Integer) 88, maximum);
     }
 
     @Test
     public void givenMaximumIntegerValueAt_SecondPosition_ReturnsSameNumber()
     {
-        Integer maximum = maximumVariable.maximumIntegerValue(88, 99, 67);
+        Integer maximum = maximumVariable.maximumValue(88, 99, 67);
         Assert.assertEquals((Integer) 99, maximum);
     }
 
     @Test
     public void givenMaximumIntegerValueAt_ThirdPosition_ReturnsSameNumber()
     {
-        Integer maximum = maximumVariable.maximumIntegerValue(88, 34, 99);
+        Integer maximum = maximumVariable.maximumValue(88, 34, 99);
         Assert.assertEquals((Integer) 99, maximum);
     }
 
     @Test
     public void givenMaximumFloatValueAt_FirstPosition_ReturnsSameValue()
     {
-        Float maximum = maximumVariable.maximumFloatValue(8.8f, 4.4f, 6.7f);
+        Float maximum = maximumVariable.maximumValue(8.8f, 4.4f, 6.7f);
         Assert.assertEquals((Float) 8.8f, maximum);
     }
 
     @Test
     public void givenMaximumFloatValueAt_SecondPosition_ReturnsSameValue()
     {
-        Float maximum = maximumVariable.maximumFloatValue(8.8f, 9.9f, 6.7f);
+        Float maximum = maximumVariable.maximumValue(8.8f, 9.9f, 6.7f);
         Assert.assertEquals((Float) 9.9f, maximum);
     }
 
     @Test
     public void givenMaximumFloatValueAt_ThirdPosition_ReturnsSameValue()
     {
-        Float maximum = maximumVariable.maximumFloatValue(8.8f, 3.4f, 9.9f);
+        Float maximum = maximumVariable.maximumValue(8.8f, 3.4f, 9.9f);
         Assert.assertEquals((Float) 9.9f, maximum);
     }
 
     @Test
     public void givenMaximumStringValueAt_FirstPosition_ReturnsSameValue()
     {
-        String maximum = maximumVariable.maximumStringValue("Peach", "Apple", "Banana");
+        String maximum = maximumVariable.maximumValue("Peach", "Apple", "Banana");
         Assert.assertEquals("Peach", maximum);
     }
 
     @Test
     public void givenMaximumStringValueAt_SecondPosition_ReturnsSameValue()
     {
-        String maximum = maximumVariable.maximumStringValue("Apple", "Peach", "Banana");
+        String maximum = maximumVariable.maximumValue("Apple", "Peach", "Banana");
         Assert.assertEquals("Peach", maximum);
     }
 
     @Test
     public void givenMaximumStringValueAt_ThirdPosition_ReturnsSameValue()
     {
-        String maximum = maximumVariable.maximumStringValue("Apple", "Banana", "Peach");
+        String maximum = maximumVariable.maximumValue("Apple", "Banana", "Peach");
         Assert.assertEquals("Peach", maximum);
     }
 }
