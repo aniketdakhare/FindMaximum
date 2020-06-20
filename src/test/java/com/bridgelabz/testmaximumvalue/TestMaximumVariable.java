@@ -28,4 +28,11 @@ public class TestMaximumVariable
         Integer maximum = maximumVariable.maximumValue(88, 99, 67);
         Assert.assertEquals((Integer) 99, maximum);
     }
+
+    @Test
+    public void givenMaximumNumberAt_ThirdPosition_ReturnsSameNumber()
+    {
+        Integer maximum = maximumVariable.maximumValue(88, 34, 99);
+        Assert.assertEquals((Integer) 99, maximum);
+    }
 }
