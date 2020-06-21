@@ -2,6 +2,7 @@ package com.bridgelabz.maximumvalue.service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class MaximumVariable < E extends Comparable<E> >
 {
@@ -18,7 +19,7 @@ public class MaximumVariable < E extends Comparable<E> >
 
     public E maximumValue()
     {
-       return MaximumVariable.maximumValue(values);
+       return maximumValue(values);
     }
 
     /**
@@ -30,6 +31,12 @@ public class MaximumVariable < E extends Comparable<E> >
     public static < E extends Comparable<E> > E maximumValue(List<E> values )
     {
         Optional<E> maximum = values.stream().max(Comparable::compareTo);
+        printMaximumValue(values,maximum.get());
         return maximum.get();
+    }
+
+    public static <E> void printMaximumValue(List<E> values, E max)
+    {
+        System.out.println("Maximum value out of "+ values+" is "+max);
     }
 }
