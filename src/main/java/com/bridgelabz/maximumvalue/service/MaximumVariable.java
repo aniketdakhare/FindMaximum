@@ -1,41 +1,35 @@
 package com.bridgelabz.maximumvalue.service;
 
-public class MaximumVariable < T extends Comparable<T> >
+import java.util.List;
+import java.util.Optional;
+
+public class MaximumVariable < E extends Comparable<E> >
 {
-    T firstValue, secondValue, thirdValue ;
+    List<E> values ;
 
     /**
-     * PARAMETERIZED CONSTRUCTOR TO INITIATE VARIABLES
-     * @param firstValue takes 1st value
-     * @param secondValue takes 2nd value
-     * @param thirdValue takes 3rd value
+     * PARAMETERIZED CONSTRUCTOR TO INITIATE LIST
+     * @param values takes the values
      */
-    public MaximumVariable(T firstValue, T secondValue, T thirdValue)
+    public MaximumVariable(List<E> values)
     {
-        this.firstValue = firstValue;
-        this.secondValue = secondValue;
-        this.thirdValue = thirdValue;
+        this.values = values;
     }
 
-    public T maximumValue()
+    public E maximumValue()
     {
-        return MaximumVariable.maximumValue(firstValue, secondValue, thirdValue);
+       return MaximumVariable.maximumValue(values);
     }
 
     /**
-     * GENERIC METHOD TO FIND OUT MAXIMUM AMONG 3 VALUES
-     * @param firstValue takes 1st value
-     * @param secondValue takes 2nd value
-     * @param thirdValue takes 3rd value
+     * GENERIC METHOD TO FIND OUT MAXIMUM AMONG THE VALUES IN ARRAY
+     * @param values takes the values
+     * @param <E> specifies type of object for generic method
      * @return maximum value
      */
-    public static < T extends Comparable<T> > T maximumValue(T firstValue, T secondValue, T thirdValue)
+    public static < E extends Comparable<E> > E maximumValue(List<E> values )
     {
-        if (firstValue.compareTo(secondValue) > 0 && firstValue.compareTo(thirdValue) > 0)
-            return firstValue;
-        else if (secondValue.compareTo(thirdValue) > 0 && secondValue.compareTo(firstValue) > 0)
-            return secondValue;
-        else
-            return thirdValue;
+        Optional<E> maximum = values.stream().max(Comparable::compareTo);
+        return maximum.get();
     }
 }
