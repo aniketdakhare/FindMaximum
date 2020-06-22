@@ -1,23 +1,22 @@
 package com.bridgelabz.maximumvalue.service;
 
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
+import java.util.Arrays;
 
-public class MaximumVariable < E extends Comparable<E> >
+public class MaximumVariable <T>
 {
-    List<E> values ;
+    T[] values ;
 
     /**
-     * PARAMETERIZED CONSTRUCTOR TO INITIATE LIST
+     * PARAMETERIZED CONSTRUCTOR TO INITIATE ARRAY
      * @param values takes the values
      */
-    public MaximumVariable(List<E> values)
+    @SafeVarargs
+    public MaximumVariable(T ... values)
     {
         this.values = values;
     }
 
-    public E maximumValue()
+    public T maximumValue()
     {
        return maximumValue(values);
     }
@@ -25,18 +24,19 @@ public class MaximumVariable < E extends Comparable<E> >
     /**
      * GENERIC METHOD TO FIND OUT MAXIMUM AMONG THE VALUES IN ARRAY
      * @param values takes the values
-     * @param <E> specifies type of object for generic method
+     * @param <T> specifies type of object for generic method
      * @return maximum value
      */
-    public static < E extends Comparable<E> > E maximumValue(List<E> values )
+    @SafeVarargs
+    public static <T> T maximumValue(T ... values )
     {
-        Optional<E> maximum = values.stream().max(Comparable::compareTo);
-        printMaximumValue(values,maximum.get());
-        return maximum.get();
+        Arrays.sort(values);
+        printMaximumValue(values[values.length - 1], Arrays.toString(values));
+        return values[values.length - 1];
     }
 
-    public static <E> void printMaximumValue(List<E> values, E max)
+    public static <E> void printMaximumValue(E max, E values)
     {
-        System.out.println("Maximum value out of "+ values+" is "+max);
+        System.out.println("Maximum value out of "+ values +" is "+max);
     }
 }
