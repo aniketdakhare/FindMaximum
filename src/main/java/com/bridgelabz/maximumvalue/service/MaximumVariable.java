@@ -37,6 +37,6 @@ public class MaximumVariable <T>
 
     public static <E> void printMaximumValue(E max, E values)
     {
-        System.out.println("Maximum value out of "+ values +" is "+max);
+        System.out.println("Maximum value out of " + values + " is " + max);
     }
 }
